@@ -3,6 +3,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const productsController = require('./controllers/products');
+const productsRouter = require('./controllers/products');
+
+
 
 // Initialize app
 const app = express()
