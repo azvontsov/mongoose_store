@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 //define the schema
 const productSchema = new Schema({
@@ -11,5 +11,5 @@ qty: Number,
 });
 
 // export the model to be accessed in server.js
-const Product = mongoose.model('product', productSchema);
+const Product = mongoose.model('Product', productSchema);
 module.exports = Product;
