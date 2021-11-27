@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
+    <%- include('./partials/head.ejs')%>
     <title>See Product Details</title>
   </head>
   <body>
@@ -23,7 +20,7 @@
           <p>Flight Time: <%= product.flight_time %></p>
           <p>Flight Distance: <%= product.flight_distance %></p>
           <p>Price: $<%= product.price %></p>
-          <p>Quantity: <%= product.qty %></p>
+
           <div class="del-edit">
             <form
               style="display: inline; margin-right: 1rem"
@@ -32,11 +29,19 @@
             >
               <input type="submit" value="DELETE" />
             </form>
-            <a
-              style="margin: 0 1rem 0 0"
-              href="/products/<%= product._id %>/edit"
-              ><button>EDIT</button></a
+            <a href="/products/<%= product._id %>/edit">Edit product</a>
+          </div>
+          <div>
+            <p>In Stock: <%= product.qty %></p>
+            <p><%= product.sold %></p>
+            <form
+              style="buy"
+              action="/products/<%= product._id%>/buy"
+              method="POST"
             >
+              <input <%= product.qty ? '' : 'disabled' %> type="submit"
+              value="<%= product.qty ? 'BUY': 'OUT OF STOCK' %>">
+            </form>
           </div>
         </div>
 
@@ -45,5 +50,6 @@
         </div>
       </div>
     </main>
+    <footer><%- include('./partials/footer.ejs')%></footer>
   </body>
 </html>

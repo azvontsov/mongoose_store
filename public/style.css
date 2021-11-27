@@ -55,12 +55,11 @@ p {
 .del-edit {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
-  margin: 0.5rem auto;
+  justify-content: stretch;
+  margin: 2rem auto;
 }
 .visual-pink {
   background-color: pink;
-
   object-fit: cover;
 }
 
@@ -89,9 +88,9 @@ main {
   background-color: rgb(77, 70, 99);
   flex-grow: 1;
   align-items: center;
-  padding: 2%;
+  padding: 1%;
   width: 300px;
-  height: 300px;
+
   border-radius: 5px;
   margin: 2%;
   box-shadow: 0 6px 15px rgb(36 37 38 / 70%);
@@ -115,7 +114,6 @@ div [class="img-show"] img {
 .card-yellow-new {
   background-color: rgb(77, 70, 99);
   flex-grow: 1;
-
   padding: 2%;
   width: 300px;
   height: 400px;
@@ -123,6 +121,7 @@ div [class="img-show"] img {
   margin: 40% 0;
   box-shadow: 0 6px 15px rgb(36 37 38 / 70%);
 }
+
 /* Edit */
 .card-yellow-edit {
   background-color: rgb(77, 70, 99);
@@ -130,7 +129,7 @@ div [class="img-show"] img {
 
   padding: 2%;
   width: 300px;
-  height: 310px;
+
   border-radius: 5px;
   margin: 40% 0;
   box-shadow: 0 6px 15px rgb(36 37 38 / 70%);
@@ -170,6 +169,33 @@ footer {
 }
 
 .btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-grad-red {
+  background-image: linear-gradient(
+    to right,
+    #ff512f 0%,
+    #dd2476 51%,
+    #ff512f 100%
+  );
+}
+.btn-grad-red {
+  margin: 20px 0 0 0;
+  padding: 10px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad-red:hover {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;

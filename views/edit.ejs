@@ -63,7 +63,10 @@
               Quantity:
               <input type="text" name="qty" value="<%= product.qty %>" />
             </p>
-
+            <p>
+              Sold: <input type="checkbox" name="Sold" <%= product.sold ?
+              'checked' : '' %>
+            </p>
             <input type="submit" value="Edit Product" />
           </form>
         </div>

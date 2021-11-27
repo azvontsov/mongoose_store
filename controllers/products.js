@@ -114,7 +114,7 @@ productsRouter.delete('/:id', (req, res) => {
 });
 // Update
 productsRouter.put("/:id", (req, res) => {
-
+    req.body.sold = !!req.body.sold; 
     Product.findByIdAndUpdate(
         req.params.id,
         req.body, {
@@ -129,7 +129,11 @@ productsRouter.put("/:id", (req, res) => {
 
 // Create route
 productsRouter.post("/", (req, res) => {
-
+    if(req.body.sold === 'on') {
+        req.body.sold = true;
+    } else {
+        req.body.sold = false;
+    }
     Product.create(req.body, (err, createdProduct) => {
         res.redirect('/products') // new stuff here
     });
@@ -154,6 +158,26 @@ productsRouter.get('/:id', (req, res) => {
     });
 });
 // exports the router object so that we require it in server.js
+
+// Buy Route
+productsRouter.post('/:id/buy', (req, res) => {
+    Product.findById(req.params.id, (err, foundProduct) => {
+        if(foundProduct.qty) {
+            foundProduct.qty -= 1
+            foundProduct.save(() => {
+                res.redirect(`/products/${foundProduct._id}`);
+            });
+        } else {
+            res.redirect(`/products/${foundProduct._id}`);
+        }
+    });
+});
+
+
+
+
+
+
 
 
 module.exports = productsRouter;

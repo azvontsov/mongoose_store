@@ -11,6 +11,7 @@ flight_distance: String,
 price: Number,
 qty: Number,
 img: String,
+sold: Boolean,
 });
 
 // export the model to be accessed in server.js
