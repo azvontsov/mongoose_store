@@ -8,9 +8,42 @@
     <title>See Product Details</title>
   </head>
   <body>
-    <h1>Name: <%= product.name %></h1>
-    <h3>Description: <%= product.description %></h3>
-    <img src="<%= product.img %>" alt="<%= product.name %>" /> <br />
-    <a href="/products">Go back to product list</a>
+    <header>
+      <h1>Product Specs</h1>
+      <a href="/products"
+        ><button class="btn-grad">Go back to product list</button></a
+      >
+    </header>
+    <main class="main-show">
+      <div class="parent-white-show">
+        <div class="card-yellow-show">
+          <h1>Name: <%= product.name %></h1>
+          <p>Dimensions: <%= product.dimensions %></p>
+          <p>Speed: <%= product.speed %></p>
+          <p>Flight Time: <%= product.flight_time %></p>
+          <p>Flight Distance: <%= product.flight_distance %></p>
+          <p>Price: $<%= product.price %></p>
+          <p>Quantity: <%= product.qty %></p>
+          <div class="del-edit">
+            <form
+              style="display: inline; margin-right: 1rem"
+              action="/products/<%= product._id %>?_method=DELETE"
+              method="POST"
+            >
+              <input type="submit" value="DELETE" />
+            </form>
+            <a
+              style="margin: 0 1rem 0 0"
+              href="/products/<%= product._id %>/edit"
+              ><button>EDIT</button></a
+            >
+          </div>
+        </div>
+
+        <div class="img-show">
+          <img src="<%= product.img %>" alt="<%= product.name %>" />
+        </div>
+      </div>
+    </main>
   </body>
 </html>

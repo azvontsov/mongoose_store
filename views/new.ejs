@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/style.css" />
-		<title>Product List</title>
-	</head>
-	<body>
-		<h1>New Product Page</h1>
-		<form action="/products" method="POST">
-			Name: <input type="text" name="name" /><br />
-			Description: <input type="text" name="description" /><br />
-			Image: <input type="text" name="img" /><br />
-			Price: <input type="text" name="price" /><br />
-			Qty: <input type="text" name="qty" /><br />
-			<input type="submit" name="" value="Add Book" />
-		</form>
-	</body>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Product List</title>
+  </head>
+  <body>
+    <header>
+      <h1>New Product Page</h1>
+      <a href="/products"
+        ><button class="btn-grad">Go back to product list</button></a
+      >
+    </header>
+    <main class="main-show">
+      <div class="parent-white-show">
+        <div class="card-yellow-new">
+          <form action="/products" method="POST">
+            <p>Name: <input type="text" name="name" /></p>
+            <p>Dimensions: <input type="text" name="dimensions" /></p>
+            <p>Speed: <input type="text" name="speed" /></p>
+            <p>Flight Time: <input type="text" name="flight time" /></p>
+            <p>Flight distance: <input type="text" name="flight distance" /></p>
+            <p>Price: <input type="text" name="price" /></p>
+            <p>Quantity: <input type="text" name="quantity" /></p>
+            <p>Image: <input type="text" name="img" /></p>
+
+            <input type="submit" name="" value="Add Product" />
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>© 2021</p>
+      <p>Made with <span>❤</span> by Anton Zvontsov</p>
+    </footer>
+  </body>
 </html>

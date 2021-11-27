@@ -7,24 +7,71 @@
     <link rel="stylesheet" href="/style.css" />
     <title>Edit Product Page</title>
   </head>
-  <body>
-    <h1>Edit Product Page</h1>
-    <form action="/products/<%= product._id %>?_method=PUT" method="POST">
-      <br />
-      Name:
-      <input type="text" name="name" value="<%= product.name %>" /><br />
-      Description:
-      <input
-        type="text"
-        name="description"
-        value="<%= product.description %>"
-      /><br />
-      Price:
-      <input type="text" name="price" value="<%= product.price %>" /><br />
-      Qty:
-      <input type="text" name="qty" value="<%= product.qty %>" /><br />
 
-      <input type="submit" value="Edit Product" />
-    </form>
+  <body>
+    <header>
+      <h1>Edit Product Page</h1>
+      <a href="/products"
+        ><button class="btn-grad">Go back to product list</button></a
+      >
+    </header>
+    <main class="main-show">
+      <div class="parent-white-show">
+        <div class="card-yellow-edit">
+          <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+            <p>
+              Name:
+              <input type="text" name="name" value="<%= product.name %>" />
+            </p>
+            <p>
+              Dimensions:
+              <input
+                type="text"
+                name="description"
+                value="<%= product.dimensions %>"
+              />
+            </p>
+            <p>
+              Speed:
+              <input
+                type="text"
+                name="description"
+                value="<%= product.speed %>"
+              />
+            </p>
+            <p>
+              Flight Time:
+              <input
+                type="text"
+                name="description"
+                value="<%= product.flight_time %>"
+              />
+            </p>
+            <p>
+              Flight distance:
+              <input
+                type="text"
+                name="price"
+                value="<%= product.flight_distance %>"
+              />
+            </p>
+            <p>
+              Price:
+              <input type="text" name="qty" value="<%= product.price %>" />
+            </p>
+            <p>
+              Quantity:
+              <input type="text" name="qty" value="<%= product.qty %>" />
+            </p>
+
+            <input type="submit" value="Edit Product" />
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>© 2021</p>
+      <p>Made with <span>❤</span> by Anton Zvontsov</p>
+    </footer>
   </body>
 </html>
