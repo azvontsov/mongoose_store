@@ -11,27 +11,16 @@ const Product = require('../models/product');
 // Seed route
 productsRouter.get('/seed', async (req, res) => {
     const data = [{
-        name: "Beans",
-        description:
-          "A small pile of beans. Buy more beans for a big pile of beans.",
-        img: "https://imgur.com/LEHS8h3.png",
-        price: 5,
-        qty: 99,
-      },
-      {
-        name: "Bones",
-        description: "It's just a bag of bones.",
-        img: "https://imgur.com/dalOqwk.png",
-        price: 25,
-        qty: 0,
-      },
-      {
-        name: "Bins",
-        description: "A stack of colorful bins for your beans and bones.",
-        img: "https://imgur.com/ptWDPO1.png",
-        price: 7000,
-        qty: 1,
-      },
+        name: "DJI Mavic 3",
+        dimensions: "347.5×283×107.7 mm",
+        speed: "19 m/s",
+        flight_time: "46 minutes",
+        flight_distance: "30 km",
+        price: 2200,
+            qty: 14,
+            img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6482/6482937cv11d.jpg",
+        },
+
     ];
     await Product.deleteMany({});
     await Product.create(data);

@@ -22,6 +22,8 @@ mongoose.connection.on('connected', () => {
 });
 
 // mount middleware
+app.use(express.static('public'));
+
 app.use(express.urlencoded({
     extended: false
 }));

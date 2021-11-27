@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
     <title>Product List</title>
   </head>
   <body>
@@ -16,7 +17,9 @@
         <li style="margin-bottom: 1rem">
           <ul style="list-style: none; margin-top: 2rem; margin-bottom: 2rem">
             <li><a href="/products/<%= elem._id %>"> <%= elem.name %> </a></li>
-            <li><img src="<%= elem.img %>" alt="<%= elem.img %>" /></li>
+            <li class="img">
+              <img src="<%= elem.img %>" alt="<%= elem.img %>" />
+            </li>
             <li href="/products/<%= elem.price %>">Price: <%= elem.price %></li>
           </ul>
           <form

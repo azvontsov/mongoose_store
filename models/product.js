@@ -4,10 +4,13 @@ const Schema = mongoose.Schema;
 //define the schema
 const productSchema = new Schema({
 name: String,
-description: String,
-img: String,
+dimensions: String,
+speed: String,
+flight_time: String,
+flight_distance: String,
 price: Number,
 qty: Number,
+img: String,
 });
 
 // export the model to be accessed in server.js
