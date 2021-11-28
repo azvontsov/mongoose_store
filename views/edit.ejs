@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap"
+      rel="stylesheet"
+    />
     <title>Edit Product Page</title>
   </head>
 
@@ -27,23 +33,19 @@
               Dimensions:
               <input
                 type="text"
-                name="description"
+                name="dimensions"
                 value="<%= product.dimensions %>"
               />
             </p>
             <p>
               Speed:
-              <input
-                type="text"
-                name="description"
-                value="<%= product.speed %>"
-              />
+              <input type="text" name="speed" value="<%= product.speed %>" />
             </p>
             <p>
               Flight Time:
               <input
                 type="text"
-                name="description"
+                name="flight_time"
                 value="<%= product.flight_time %>"
               />
             </p>
@@ -51,13 +53,13 @@
               Flight distance:
               <input
                 type="text"
-                name="price"
+                name="flight_distance"
                 value="<%= product.flight_distance %>"
               />
             </p>
             <p>
               Price:
-              <input type="text" name="qty" value="<%= product.price %>" />
+              <input type="text" name="price" value="<%= product.price %>" />
             </p>
             <p>
               Quantity:
@@ -72,9 +74,6 @@
         </div>
       </div>
     </main>
-    <footer>
-      <p>© 2021</p>
-      <p>Made with <span>❤</span> by Anton Zvontsov</p>
-    </footer>
+    <footer><%- include('./partials/footer.ejs')%></footer>
   </body>
 </html>

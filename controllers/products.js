@@ -80,6 +80,16 @@ productsRouter.get('/seed', async (req, res) => {
             qty: 1,
             img: "https://stormsend1.djicdn.com/tpc/uploads/photos/407/large_820d9638-ecf0-4d80-8a0c-487c12e89c86.jpg",
         },
+        {
+            name: "DJI FPV Drone Combo",
+            dimensions: "327×217×325 mm",
+            speed: "65 mph ",
+            flight_time: "20 minutes",
+            flight_distance: "20.5 km",
+            price: 1000,
+            qty: 11,
+            img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6442/6442031cv13d.jpg",
+        },
     ];
     await Product.deleteMany({});
     await Product.create(data);
@@ -114,6 +124,7 @@ productsRouter.delete('/:id', (req, res) => {
 });
 // Update
 productsRouter.put("/:id", (req, res) => {
+    console.log("editing product", req.body, req.params.id);
     req.body.sold = !!req.body.sold; 
     Product.findByIdAndUpdate(
         req.params.id,
@@ -121,6 +132,7 @@ productsRouter.put("/:id", (req, res) => {
             new: true
         },
         (err, product) => {
+            // console.log(err);
             res.redirect(`/products`)
         });
 });

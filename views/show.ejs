@@ -35,7 +35,7 @@
             <p>In Stock: <%= product.qty %></p>
             <p><%= product.sold %></p>
             <form
-              style="buy"
+              class="buy"
               action="/products/<%= product._id%>/buy"
               method="POST"
             >
