@@ -103,7 +103,7 @@ productsRouter.get('/destroy-data', async (req, res) => {
 });
 
 // Index route
-productsRouter.get('/', (req, res) => {
+ productsRouter.get('/', (req, res) => {
     Product.find({}, (err, allProducts) => {
         res.render('index.ejs', {
             products: allProducts,
